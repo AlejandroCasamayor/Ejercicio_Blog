@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-formulario',
@@ -6,10 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-
-  constructor() { }
+  formulario:FormGroup;
+  constructor(
+    private postsService: PostsService
+  ) { 
+    this.formulario = new FormGroup(
+      {
+        titulo: new FormControl(''),
+        texto: new FormControl(''),
+        autor: new FormControl(''),
+        imagen: new FormControl(''),
+        fecha: new FormControl(''),
+        categoria: new FormControl(''),
+    }
+    )
+  }
 
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    console.log(this.formulario.value)
+    this.postsService.create(this.formulario.value)
+  }
 }

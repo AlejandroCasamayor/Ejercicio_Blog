@@ -5,39 +5,14 @@ import { Post } from '../interfaces/post.interface';
   providedIn: 'root'
 })
 export class PostsService {
-
-  arrPosts: Post [];
+  arrPosts: Post[];
   constructor() { 
-    this.arrPosts = [
-      {
-      titulo: '',
-      texto: '',
-      autor: '',
-      imagen: '',
-      fecha: '',
-      categoria: '',
-      },
-      {
-        titulo: '',
-        texto: '',
-        autor: '',
-        imagen: '',
-        fecha: '',
-        categoria: '',
-      },
-      {
-        titulo: '',
-        texto: '',
-        autor: '',
-        imagen: '',
-        fecha: '',
-        categoria: '',
-      },
-  ]
+    this.arrPosts = []
   }
 
   create(Post: Post){
     this.arrPosts.push(Post)
+    console.log(this.arrPosts)
   }
   getAll(){
     return this.arrPosts
