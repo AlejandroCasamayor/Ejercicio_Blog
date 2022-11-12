@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/interfaces/post.interface';
 import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
@@ -8,12 +9,15 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class ListaPostsComponent implements OnInit {
 
+  arrPosts: Post[]
   constructor(
     private PostsService: PostsService
-  ) { }
+  ) { 
+    this.arrPosts= []
+  }
 
   ngOnInit(): void {
-    this.PostsService.getAll()
+    this.arrPosts= this.PostsService.getAll()
   }
 
 }
