@@ -1,6 +1,8 @@
 <div class="posts">
     <div class="post" *ngFor="let post of arrPosts">
-        <h2>{{post.titulo}}</h2>
-        <p>{{post.texto}}</p>
+        <h5>{{post.titulo}}</h5>
+        <p class="autor">{{post.autor}}</p>
+        <p class="texto">{{post.texto}}</p>
+        <hr>
     </div>
 </div>

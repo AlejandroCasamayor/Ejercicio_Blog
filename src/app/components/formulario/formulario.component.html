@@ -1,29 +1,32 @@
-<div class="formulario">
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div>
-            <label>Titulo</label>
-            <input type="text" formControlName="titulo">
+    <form class="formulario" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Título</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Indica el título" formControlName="titulo">
         </div>
-        <div>
-            <label>Texto</label>
-            <input type="text" formControlName="texto">
+        <div class="form-group">
+            <label for="Input2">Texto</label>
+            <textarea rows="3" class="form-control" id="Input2" formControlName="texto"></textarea>
         </div>
-        <div>
-            <label>Autor</label>
-            <input type="text" formControlName="autor">
+        <div class="form-group">
+            <label for="Input3">Autor</label>
+            <input type="email" class="form-control" id="Input3" formControlName="autor">
         </div>
-        <div>
-            <label>Imagen</label>
-            <input type="text" formControlName="imagen">
+        <div class="form-group">
+            <label for="Input4">Imagen</label>
+            <input type="email" class="form-control" id="Input4" formControlName="imagen">
         </div>
-        <div>
-            <label>Fecha</label>
-            <input type="text" formControlName="fecha">
+        <div class="form-group">
+            <label for="Input5">Fecha</label>
+            <input type="email" class="form-control" id="Input5" formControlName="fecha" placeholder="DD/MM/YYYY">
         </div>
-        <div>
-            <label>Categoria</label>
-            <input type="text" formControlName="categoria">
-        </div>
-        <input type="submit" value="Enviar">
+        <div class="form-group">
+            <label for="Input6">Elige la categoría</label>
+            <select class="form-control" id="Input6" formControlName="categoria">
+              <option>Informática</option>
+              <option>Diseño</option>
+              <option>Programación</option>
+            </select>
+          </div>
+        <input class="publicar" type="submit" value="Publicar">
     </form>
-</div>
+

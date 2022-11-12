@@ -8,7 +8,9 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+
   formulario:FormGroup;
+  
   constructor(
     private postsService: PostsService
   ) { 
