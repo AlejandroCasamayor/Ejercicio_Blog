@@ -20,4 +20,11 @@ export class ListaPostsComponent implements OnInit {
     this.arrPosts= this.PostsService.getAll()
   }
 
+  getCategory($event:any) {
+    this.arrPosts= this.PostsService.getAll()
+    console.log($event.target.value)
+    let category = this.arrPosts.filter(post => post.categoria === $event.target.value)
+    console.log(category) 
+    this.arrPosts = category
+  }
 }
